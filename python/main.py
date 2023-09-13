@@ -96,7 +96,6 @@ def create_vpc():
     response = ec2.create_vpc(CidrBlock=vpc_cidr_block)
     # Extract the VPC ID
     vpc_id = response["Vpc"]["VpcId"]
-    # Corrected the line below (changed ec2_client to ec2)
     response = ec2.create_subnet(VpcId=vpc_id, CidrBlock=vpc_cidr_block)
     print(f"VPC created with ID: {vpc_id}")
 
